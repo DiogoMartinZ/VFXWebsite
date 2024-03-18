@@ -1,0 +1,60 @@
+﻿@page "/MainPage"
+@model VFXWebsite.Pages.MainPageModel
+
+<form method="post">
+<div class="row mb-4">
+    <div class="col-sm-3" style="display:grid">
+            <span style="font-size:20px;color:#285a85;font-weight:bold;">Forex Daily Prices</span>
+        <span>Last Refreshed @Model.TimeRefreshed</span>
+    </div>
+    <div class="col-sm-1">
+        <select asp-for="ForexDaily.From" asp-items="Model.AllCurrencies">
+            <option value="">Pick one</option>
+        </select>
+        
+    </div>
+
+    <div class="col-sm-1">
+            <select asp-for="ForexDaily.To" asp-items="Model.AllCurrencies">
+                <option value="">Pick one</option>
+            </select>
+    </div>
+
+    <div class="col">
+        <button style="background:none;background-color:none;border:none"><img src="~/images/refresh.png" style="height:15px"/></button>
+            
+    </div>
+
+   
+</div>
+<div class="row">
+    <div class="col-sm-2" style="display:grid">
+        <label>Open</label>
+            <input asp-for="@Model.open" type="text" disabled />
+    </div>
+
+        <div class="col-sm-2" style="display:grid">
+            <label>High</label>
+            <input asp-for="@Model.high" type="text" disabled/>
+        </div>
+
+        <div class="col-sm-2" style="display:grid">
+            <label>Low</label>
+            <input asp-for="@Model.low" type="text" disabled />
+        </div>
+
+        <div class="col-sm-2" style="display:grid">
+            <label>Close</label>
+            <input asp-for="@Model.close" type="text" disabled />
+        </div>
+
+
+        
+</div>
+</form>
+
+@{
+
+
+    
+}

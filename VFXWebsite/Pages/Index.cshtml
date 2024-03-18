@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+
+</style>
+
+
+<div class="login-page">
+    <div class="form">
+
+        <div class="mb-5">
+            <img src="images/logo-color.svg"style="height:50px;"/>
+        </div>
+        <form class="login-form" method="post">
+            <div class="text-dange" asp-validation-summary="ModelOnly"></div>
+
+            <input type="text" placeholder="CLIENT ID" asp-for="Credential.ClientId" />
+            <span class="text-danger" asp-validation-for="Credential.ClientId"></span>
+
+            <input type="text" placeholder="USER ID" asp-for="Credential.UserId" />
+            <span class="text-danger" asp-validation-for="Credential.UserId"></span>
+
+            <input type="password" placeholder="password" asp-for="Credential.Password" />
+            <span class="text-danger" asp-validation-for="Credential.Password"></span>
+
+            <button onclick="SubmitLogin">login</button>
+
+            <label class="mt-3 text-danger">@Model.message </label>
+
+        </form>
+    </div>
+</div>
